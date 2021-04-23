@@ -4,15 +4,7 @@ getenforce && \
 yum install -y -q \
     epel-release && \
 yum update -y -q && \
-yum install -y -q \
-     wget \ 
-     ncdu \
-     tree \
-     vnstat \
-     htop \
-     unzip \
-     curl \
-     git &&\
+yum install -y -q    wget      ncdu      tree      vnstat      htop      unzip      curl      git &&\
 curl -fsSL https://get.docker.com -o get-docker.sh && \
       sh get-docker.sh &&\
 curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
