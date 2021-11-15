@@ -1,5 +1,6 @@
 #!/bin/bash
 setenforce 0 && \
+sed -i s/^SELINUX=.*$/SELINUX=disabled/ /etc/selinux/config \
 getenforce && \
 yum install -y -q \
     epel-release && \
@@ -14,4 +15,5 @@ timedatectl set-timezone Asia/Tokyo&&\
 systemctl start docker && \
 systemctl enable docker &&\
 firewall-cmd --permanent --zone=public --add-port=2233/tcp &&\
-firewall-cmd --reload
+firewall-cmd --reload && \
+reboot
